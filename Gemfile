@@ -20,7 +20,7 @@ group :jekyll_plugins do
     gem 'mini_racer'
     gem 'unicode_utils'
     gem 'webrick'
-    gem 'seo-tag'
+    gem 'jekyll-seo-tag'
     gem 'jekyll-github-metadata'
 end
 group :other_plugins do
