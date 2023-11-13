@@ -1,77 +1,166 @@
 {
   "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
+    "name": "Mateus Gomes",
+    "label": "Software Engineer",
     "image": "",
-    "email": "albert@einstein.de",
-    "phone": "(912) 123-4567",
-    "url": "https://alshedivat.github.io/al-folio/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "email": "mateus@mateusgomes.dev",
+    "phone": "+55 (61) 992482874",
+    "url": "https://mateusgomes.dev",
+    "summary": " I'm a Software Engineer with 7+ years of experience in web development. I'm passionate about building great products and helping other developers to do the same. I'm currently working at Kintsu as a Senior Full-stack Developer.",
     "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
+      "address": "Rua 5 Sul - Águas Claras",
+      "city": "Brasilia",
+      "countryCode": "BR",
+      "region": "Distrito Federal"
     },
     "profiles": [
       {
         "network": "Twitter",
-        "username": "AlbertEinstein",
-        "url": "https://twitter.com/AlbertEinstein"
+        "username": "mateusgomes_dev",
+        "url": "https://x.com/mateusgomes_dev"
       }
     ]
   },
   "work": [
-    {
-      "name": "Institute for Advanced Study, Princeton University",
-      "position": "Professor of Theoretical Physics",
-      "url": "https://example.com",
-      "startDate": "1933-01-01",
-      "endDate": "1955-01-01",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
+   {
+      "company": "Kintsu",
+      "position": "Senior Full-stack Developer",
+      "website": "https://kintsu.com.br",
+      "startDate": "2021-01-01",
+      "endDate": "Present",
+      "summary": "Development of health tech SaaS startup using Typescript, Express, Vue.js, AWS services",
       "highlights": [
-        "Relativity"
+        "Spearheading implementation of new features across front-end and back-end",
+        "Managing full software development lifecycle from planning to deployment"
       ]
-    }
+    },
+    {
+      "company": "Accenture",
+      "position": "Senior Developer/Tech Lead",
+      "website": "https://accenture.com",
+      "startDate": "2021-01-01",
+      "endDate": "2023-01-01",
+      "summary": "Developed and maintained financial platforms using Angular, Java Spring Boot, GCP, AWS",
+      "highlights": [
+        "Built reusable front-end components and back-end microservices",
+        "Led initiatives to improve architecture, testing practices, and standards",
+        "Mentored junior developers",
+        "Maitained high availability of services and API endpoints",
+        "Maintained legacy codebase"
+      ]
+    },
+    {
+      "company": "Konker Labs",
+      "position": "Full-stack Developer",
+      "website": "https://konkerlabs.com",
+      "startDate": "2021-01-01",
+      "endDate": "2022-01-01",
+      "summary": "Worked on SaaS security analysis platform built using Golang and Angular",
+      "highlights": [
+        "Evolved platform to meet changing customer needs",
+        "Ensured high availability of services and API endpoints",
+        "Maintained infrastructure on AWS",
+        "Provided technical support to customers",
+        "Obervability and monitoring"
+      ]
+    },
+    {
+      "company": "SdBusiness",
+      "position": "Full-stack Developer",
+      "website": "https://SdBusiness.com.br",
+      "startDate": "2020-01-01",
+      "endDate": "2021-01-01",
+      "summary": "Developed front-end screens and components using Angular, RxJs, Material and Backends using Node.js and Express.js APIs and integrated with MySQL database",
+      "highlights": [
+        "Implemented new features across full stack",
+        "Maintained legacy codebase",
+        "Maitained high availability of services and API endpoints",
+        "Maintained infrastructure on Azure"
+      ]
+   }
   ],
   "volunteer": [],
   "education": [
     {
-      "institution": "University of Zurich, Zurich, Switzerland",
-      "url": "https://www.uzh.ch/",
-      "area": "Software Development",
-      "studyType": "PhD",
-      "startDate": "1905-01-01",
-      "endDate": "1905-01-01",
-      "score": "",
+      "institution": "Faculdade Tratos",
+      "area": "Mathematics",
+      "studyType": "Bachelor",
+      "startDate": "2020-01-01",
+      "endDate": "2023-01-01",
+      "gpa": "3.5",
       "courses": [
-        "Theory of Relativity"
+        "Calculus",
+        "Algebra",
+        "Statistics"
+      ]
+    },
+    {
+      "institution": "Universidade Catolica de Brasilia",
+      "area": "Analysis and Systems Development",
+      "studyType": "Bachelor",
+      "startDate": "2020-01-01",
+      "endDate": "2024-01-01",
+      "gpa": "3.5",
+      "courses": [
+        "Programming",
+        "Algorithms",
+        "Data Structures"
+      ]
+    },
+    {
+      "institution": "SENAC",
+      "area": "Accounting",
+      "studyType": "Technical",
+      "startDate": "2010-01-01",
+      "endDate": "2011-01-01",
+      "gpa": "3.5",
+      "courses": [
+        "Accounting",
+        "Finance"
       ]
     }
   ],
-  "awards": [
-    {
-      "title": "Nobel Prize in Physics",
-      "date": "1921-11-01",
-      "awarder": "Royal Swedish Academy of Sciences",
-      "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
-    }
-  ],
+  "awards": [],
   "certificates": [],
   "publications": [],
   "skills": [],
   "languages": [
     {
-      "language": "German",
+      "language": "Portuguese",
       "fluency": "Native speaker"
     },
     {
       "language": "English",
-      "fluency": "Fluent"
+      "fluency": "Professional working proficiency"
+    },
+    {
+      "language": "Spanish",
+      "fluency": "Professional working proficiency"
     }
   ],
-  "interests": [],
+  "interests": [
+    {
+      "name": "Guitar",
+      "keywords": [
+        "Music",
+        "Guitar"
+      ]
+    },
+    {
+      "name": "Reading",
+      "keywords": [
+        "Books",
+        "Tech Books"
+      ]
+    },
+    {
+      "name": "Learning",
+      "keywords": [
+        "Learning",
+        "Something new"
+      ]
+    }
+  ],
   "references": [],
   "projects": []
 }
