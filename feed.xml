@@ -1,63 +1,83 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://mateusgms.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://mateusgms.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2023-11-16T20:50:52+00:00</updated><id>https://mateusgms.github.io/feed.xml</id><title type="html">blank</title><subtitle>I&apos;m a software engineer, with a focus on web development. I&apos;m passionate about technology, and I love to learn new things. I&apos;m currently using Java, Angular, Golang, Spring Boot, Spring Batch, Kubernetes, Docker, and more. </subtitle><entry><title type="html">a post with code</title><link href="https://mateusgms.github.io/blog/2015/code/" rel="alternate" type="text/html" title="a post with code"/><published>2015-07-15T15:09:00+00:00</published><updated>2015-07-15T15:09:00+00:00</updated><id>https://mateusgms.github.io/blog/2015/code</id><content type="html" xml:base="https://mateusgms.github.io/blog/2015/code/"><![CDATA[<p>This theme implements a built-in Jekyll feature, the use of Rouge, for syntax highlighting. It supports more than 100 languages. This example is in C++. All you have to do is wrap your code in markdown code tags:</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">c++
-</span><span class="n">code</span> <span class="n">code</span> <span class="n">code</span>
-<span class="p">```</span>
-</code></pre></div></div> <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="k">const</span> <span class="err">\</span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
-<span class="p">{</span>
-    <span class="n">string</span> <span class="n">myString</span><span class="p">;</span>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://mateusgms.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://mateusgms.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2024-07-25T01:03:13+00:00</updated><id>https://mateusgms.github.io/feed.xml</id><title type="html">blank</title><subtitle>I&apos;m a software engineer, with a focus on web development. I&apos;m passionate about technology, and I love to learn new things. I&apos;m currently using Java, Angular, Golang, Spring Boot, Spring Batch, Kubernetes, Docker, and more. </subtitle><entry><title type="html">Available Applications with Golang</title><link href="https://mateusgms.github.io/blog/2024/code/" rel="alternate" type="text/html" title="Available Applications with Golang"/><published>2024-07-24T21:55:00+00:00</published><updated>2024-07-24T21:55:00+00:00</updated><id>https://mateusgms.github.io/blog/2024/code</id><content type="html" xml:base="https://mateusgms.github.io/blog/2024/code/"><![CDATA[<h1 id="designing-available-applications-with-golang">Designing Available Applications with Golang</h1> <p>When working within a context where you cannot or do not want to change your infrastructure on distributed systems, an important question arises: How can I make my application more available?</p> <p>Available applications should only experience a maximum of 5% errors. If your error rate is higher than this, you have a problem, or worse, you might not even know you have a problem. But don’t worry, we’re talking about untreated errors or issues that arise because you haven’t managed your responses or status codes properly. Here, we’ll use Golang and Resty to help solve many of these issues.</p> <h2 id="lets-move-on">Let’s Move On!</h2> <p>Imagine you have an application that needs to call another microservice to retrieve product details, using only the product ID:</p> <h3 id="initial-code-example">Initial Code Example</h3> <div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="n">main</span>
 
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"input a string: "</span><span class="p">;</span>
-    <span class="n">getline</span><span class="p">(</span><span class="n">cin</span><span class="p">,</span> <span class="n">myString</span><span class="p">);</span>
-    <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="n">myString</span><span class="p">.</span><span class="n">length</span><span class="p">();</span>
+<span class="k">import</span> <span class="p">(</span>
+    <span class="s">"fmt"</span>
+    <span class="s">"github.com/go-resty/resty/v2"</span>
+<span class="p">)</span>
 
-    <span class="kt">char</span> <span class="n">charArray</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span> <span class="o">*</span> <span class="p">[</span><span class="n">length</span><span class="p">];</span>
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">client</span> <span class="o">:=</span> <span class="n">resty</span><span class="o">.</span><span class="n">New</span><span class="p">()</span>
 
-    <span class="n">charArray</span> <span class="o">=</span> <span class="n">myString</span><span class="p">;</span>
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">){</span>
-        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">charArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span>
+    <span class="c">// Example array of product IDs</span>
+    <span class="n">ids</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">"123"</span><span class="p">,</span> <span class="s">"456"</span><span class="p">,</span> <span class="s">"789"</span><span class="p">}</span>
+
+    <span class="c">// Make the request</span>
+    <span class="n">resp</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">client</span><span class="o">.</span><span class="n">R</span><span class="p">()</span><span class="o">.</span>
+        <span class="n">SetBody</span><span class="p">(</span><span class="n">ids</span><span class="p">)</span><span class="o">.</span>
+        <span class="n">SetResult</span><span class="p">(</span><span class="o">&amp;</span><span class="p">[]</span><span class="n">Product</span><span class="p">{})</span><span class="o">.</span>
+        <span class="n">Post</span><span class="p">(</span><span class="s">"https://example.com/api/products"</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+        <span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"Error: %v</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+        <span class="k">return</span>
     <span class="p">}</span>
 
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">products</span> <span class="o">:=</span> <span class="n">resp</span><span class="o">.</span><span class="n">Result</span><span class="p">()</span><span class="o">.</span><span class="p">(</span><span class="o">*</span><span class="p">[]</span><span class="n">Product</span><span class="p">)</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"Products: %v</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="o">*</span><span class="n">products</span><span class="p">)</span>
 <span class="p">}</span>
-</code></pre></div></div> <p>For displaying code in a list item, you have to be aware of the indentation, as stated in this <a href="https://stackoverflow.com/questions/34987908/embed-a-code-block-in-a-list-item-with-proper-indentation-in-kramdown/38090598#38090598">Stackoverflow answer</a>. You must indent your code by <strong>(3 * bullet_indent_level)</strong> spaces. This is because kramdown (the markdown engine used by Jekyll) indentation for the code block in lists is determined by the column number of the first non-space character after the list item marker. For example:</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">1.</span> We can put fenced code blocks inside nested bullets, too.
-<span class="p">   1.</span> Like this:
-      <span class="p">```</span><span class="nl">c
-</span>      <span class="n">printf</span><span class="p">(</span><span class="s">"Hello, World!"</span><span class="p">);</span>
-      <span class="p">```</span>
-<span class="p">
-   2.</span> The key is to indent your fenced block in the same line as the first character of the line.
-</code></pre></div></div> <p>Which displays:</p> <ol> <li>We can put fenced code blocks inside nested bullets, too. <ol> <li>Like this: <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">printf</span><span class="p">(</span><span class="s">"Hello, World!"</span><span class="p">);</span>
-</code></pre></div> </div> </li> <li>The key is to indent your fenced block in the same line as the first character of the line.</li> </ol> </li> </ol> <p>By default, it does not display line numbers. If you want to display line numbers for every code block, you can set <code class="language-plaintext highlighter-rouge">kramdown.syntax_highlighter_opts.block.line_numbers</code> to true in your <code class="language-plaintext highlighter-rouge">_config.yml</code> file.</p> <p>If you want to display line numbers for a specific code block, all you have to do is wrap your code in a liquid tag:</p> <p>{% highlight c++ linenos %} <br/> code code code <br/> {% endhighlight %}</p> <p>The keyword <code class="language-plaintext highlighter-rouge">linenos</code> triggers display of line numbers. Produces something like this:</p> <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-</pre></td><td class="code"><pre><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="k">const</span> <span class="err">\</span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
-<span class="p">{</span>
-    <span class="n">string</span> <span class="n">myString</span><span class="p">;</span>
 
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"input a string: "</span><span class="p">;</span>
-    <span class="n">getline</span><span class="p">(</span><span class="n">cin</span><span class="p">,</span> <span class="n">myString</span><span class="p">);</span>
-    <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="n">myString</span><span class="p">.</span><span class="n">length</span><span class="p">();</span>
+<span class="c">// Product represents a product with details</span>
+<span class="k">type</span> <span class="n">Product</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">ID</span>    <span class="kt">string</span> <span class="s">`json:"id"`</span>
+    <span class="n">Name</span>  <span class="kt">string</span> <span class="s">`json:"name"`</span>
+    <span class="n">Price</span> <span class="kt">float64</span> <span class="s">`json:"price"`</span>
+<span class="p">}</span>
+</code></pre></div></div> <p>If this request fails 50% of the time, what should you do? Oftentimes, we’ll call someone to inform them about the issue and work on a solution. But if you don’t have that option, you need to solve the problem yourself. Here are some approaches that can help:</p> <h3 id="retry">Retry</h3> <p>Retrying can help you get a successful response after initially encountering an error. In cases of transitory failures, like network issues or temporary overloads, you can increase the availability of your application by retrying the request.</p> <h4 id="be-careful">Be Careful:</h4> <p>When implementing retries, consider the following points:</p> <ol> <li>Retrying can improve availability but might also strain the client application.</li> <li>Ensure the third-party application has a rate limit setup to handle retries.</li> </ol> <h4 id="retry-implementation-with-resty">Retry Implementation with Resty</h4> <p>Here’s how you can implement the retry approach using Resty’s built-in mechanism:</p> <div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="n">main</span>
 
-    <span class="kt">char</span> <span class="n">charArray</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span> <span class="o">*</span> <span class="p">[</span><span class="n">length</span><span class="p">];</span>
+<span class="k">import</span> <span class="p">(</span>
+    <span class="s">"errors"</span>
+    <span class="s">"fmt"</span>
+    <span class="s">"github.com/go-resty/resty/v2"</span>
+    <span class="s">"time"</span>
+<span class="p">)</span>
 
-    <span class="n">charArray</span> <span class="o">=</span> <span class="n">myString</span><span class="p">;</span>
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">){</span>
-        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">charArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span>
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">client</span> <span class="o">:=</span> <span class="n">resty</span><span class="o">.</span><span class="n">New</span><span class="p">()</span>
+
+    <span class="c">// Configure retries</span>
+    <span class="n">client</span><span class="o">.</span>
+        <span class="n">SetRetryCount</span><span class="p">(</span><span class="m">3</span><span class="p">)</span><span class="o">.</span>
+        <span class="n">SetRetryWaitTime</span><span class="p">(</span><span class="m">5</span> <span class="o">*</span> <span class="n">time</span><span class="o">.</span><span class="n">Second</span><span class="p">)</span><span class="o">.</span>
+        <span class="n">SetRetryMaxWaitTime</span><span class="p">(</span><span class="m">20</span> <span class="o">*</span> <span class="n">time</span><span class="o">.</span><span class="n">Second</span><span class="p">)</span><span class="o">.</span>
+        <span class="n">SetRetryAfter</span><span class="p">(</span><span class="k">func</span><span class="p">(</span><span class="n">client</span> <span class="o">*</span><span class="n">resty</span><span class="o">.</span><span class="n">Client</span><span class="p">,</span> <span class="n">resp</span> <span class="o">*</span><span class="n">resty</span><span class="o">.</span><span class="n">Response</span><span class="p">)</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">Duration</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="n">resp</span><span class="o">.</span><span class="n">StatusCode</span><span class="p">()</span> <span class="o">==</span> <span class="m">429</span> <span class="p">{</span> <span class="c">// Assuming 429 is the status code for quota exceeded</span>
+                <span class="k">return</span> <span class="m">0</span><span class="p">,</span> <span class="n">errors</span><span class="o">.</span><span class="n">New</span><span class="p">(</span><span class="s">"quota exceeded"</span><span class="p">)</span>
+            <span class="p">}</span>
+            <span class="k">return</span> <span class="m">0</span><span class="p">,</span> <span class="no">nil</span>
+        <span class="p">})</span>
+
+    <span class="c">// Example array of product IDs</span>
+    <span class="n">ids</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">"123"</span><span class="p">,</span> <span class="s">"456"</span><span class="p">,</span> <span class="s">"789"</span><span class="p">}</span>
+
+    <span class="c">// Make the request</span>
+    <span class="n">resp</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">client</span><span class="o">.</span><span class="n">R</span><span class="p">()</span><span class="o">.</span>
+        <span class="n">SetBody</span><span class="p">(</span><span class="n">ids</span><span class="p">)</span><span class="o">.</span>
+        <span class="n">SetResult</span><span class="p">(</span><span class="o">&amp;</span><span class="p">[]</span><span class="n">Product</span><span class="p">{})</span><span class="o">.</span>
+        <span class="n">Post</span><span class="p">(</span><span class="s">"https://example.com/api/products"</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+        <span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"Error: %v</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+        <span class="k">return</span>
     <span class="p">}</span>
 
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">products</span> <span class="o">:=</span> <span class="n">resp</span><span class="o">.</span><span class="n">Result</span><span class="p">()</span><span class="o">.</span><span class="p">(</span><span class="o">*</span><span class="p">[]</span><span class="n">Product</span><span class="p">)</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"Products: %v</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="o">*</span><span class="n">products</span><span class="p">)</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></figure>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="code"/><summary type="html"><![CDATA[an example of a blog post with some code]]></summary></entry></feed>
+
+<span class="c">// Product represents a product with details</span>
+<span class="k">type</span> <span class="n">Product</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">ID</span>    <span class="kt">string</span> <span class="s">`json:"id"`</span>
+    <span class="n">Name</span>  <span class="kt">string</span> <span class="s">`json:"name"`</span>
+    <span class="n">Price</span> <span class="kt">float64</span> <span class="s">`json:"price"`</span>
+<span class="p">}</span>
+</code></pre></div></div> <h3 id="backoff">Backoff</h3> <p>Backoff strategies help mitigate issues caused by retries by specifying intervals between each retry attempt. You can use either an exponential or linear backoff. However, consider the following points:</p> <h4 id="be-careful-1">Be Careful:</h4> <ol> <li>Backoff may not be necessary if the client application guarantees delivery.</li> <li>For real-time applications, the delay introduced by backoff might be unacceptable.</li> <li>Scheduled workloads where the timing of the response is predictable.</li> <li>Unique contexts where repeated requests may cause unwanted side effects.</li> <li>Stress tests or workload simulations.</li> </ol> <p>Resty uses exponential backoff with jitter by default, which helps in preventing synchronized retries across multiple clients.</p> <h2 id="conclusion">Conclusion</h2> <p>These approaches can significantly improve the availability of your application. However, always adapt these methods to your specific context. Test, analyze, and validate to ensure the problem of availability is caused by third parties and understand how these changes will impact them. Thorough testing and evaluation can powerfully enhance your application’s robustness.</p>]]></content><author><name></name></author><category term="Golang"/><category term="golang"/><category term="code"/><category term="availability"/><category term="resty"/><summary type="html"><![CDATA[Designing Available Applications with Golang]]></summary></entry></feed>
