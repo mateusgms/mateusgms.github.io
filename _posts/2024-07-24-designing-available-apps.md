@@ -18,7 +18,6 @@ Available applications should only experience a maximum of 5% errors. If your er
 
 Imagine you have an application that needs to call another microservice to retrieve product details, using only the product ID:
 
-### Initial Code Example
 
 ```go
 package main
@@ -136,8 +135,11 @@ Backoff strategies help mitigate issues caused by retries by specifying interval
 4. Unique contexts where repeated requests may cause unwanted side effects.
 5. Stress tests or workload simulations.
 
-Resty uses exponential backoff with jitter by default, which helps in preventing synchronized retries across multiple clients.
+> Get in mind
+>
+> We can handle it using another patterns or using it together, like *Circuit Breaker*, but we can talk about it in another post.
 
 ## Conclusion
 
 These approaches can significantly improve the availability of your application. However, always adapt these methods to your specific context. Test, analyze, and validate to ensure the problem of availability is caused by third parties and understand how these changes will impact them. Thorough testing and evaluation can powerfully enhance your application's robustness.
+
